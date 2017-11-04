@@ -44,8 +44,7 @@ function initMap() {
 	})
 
     newPoint.addListener('click', function() {
-    	//open modal
-    	alert("modal goes here");
+    	$("#myModal").modal("show");
     	hoverwindow.close(map, newPoint);
   	});
     newPoint.addListener('mouseover', function() {
