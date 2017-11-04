@@ -1,5 +1,15 @@
+@font-face {
+	font-family: frank;
+	src: url('Frank/Frank-Knows.ttf');
+}
+
 body {
     background: url(../images/background.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+h1 {
+	font-family: frank;
+}
+
