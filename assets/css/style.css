@@ -13,3 +13,7 @@ h1 {
 	font-family: frank;
 }
 
+#map {
+        height: 600px;
+        width: 100%;
+}
