@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Siting</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-lightbox.css">
+    <script type="text/javascript" src="assets/javascript/bootstrap-lightbox.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <h1>Haunted Spots</h1>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><strong>Add a Siting</strong></h3>
+    </div>
+    <div class="panel-body">
+
+        <!-- Entry Form -->
+        <form>
+            <div class="form-group">
+                <label for="name-input">Story Name</label>
+                <input class="form-control" id="name-input" type="text">
+            </div>
+            <div class="form-group">
+                <label for="desc-input">Description</label>
+                <input class="form-control" id="desc-input" type="text">
+            </div>
+            <div class="form-group">
+                <label for="date-input">Date (DD/MM/YY - ex: 01/01/89)</label>
+                <input class="form-control" id="date-input" type="text">
+            </div>
+            <div class="form-group">
+                <label for="where-input">Where is this?</label>
+                <input class="form-control" id="where-input" type="text">
+            </div>
+            <button class="btn btn-primary" id="add-siting-btn" type="submit">Add this Siting</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
