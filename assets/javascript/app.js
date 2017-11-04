@@ -22,7 +22,6 @@ function initMap() {
       center: {lat: 40.7607793, lng: -111.8910474}
     });
 
-   	//
    	db.ref("/stories").on("child_added", function(snapshot) { 
 		totalChildren++;
 
@@ -36,15 +35,6 @@ function initMap() {
 			var rating = String(snapshot.val().rating);
 			var truthFactor	= snapshot.val().truthFactor;
 			var type = snapshot.val().type;
-
-			console.log(date);
-			console.log(description);
-			console.log(locationCity, locationState);
-			console.log(locationGeoLatitude, locationGeoLongitude);
-			console.log(name);
-			console.log(rating);
-			console.log(truthFactor);
-			console.log(type);	
 
 			var newPoint = new google.maps.Marker({
 			    position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
@@ -69,6 +59,4 @@ function initMap() {
 		  		hoverwindow.close(map, newPoint);
 		  	});
 	});
-
-   	//
 };
