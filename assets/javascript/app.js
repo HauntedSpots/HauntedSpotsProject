@@ -18,7 +18,7 @@ var googleMapsApiKey = "AIzaSyDY7MH2dv1jH8-T__4VIShSb79MOxirXLM";
 function initMap() {
 
    	var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
+      zoom: 8,
       center: {lat: 40.7607793, lng: -111.8910474}
     });
 
@@ -48,7 +48,14 @@ function initMap() {
 			})
 
 		    newPoint.addListener('click', function() {
-		    	$("#storyDescription").text(description);
+		    	$("#pointTitle").text(name);
+
+		    	var newDiv = $("<div>");
+		    	newDiv.append($("<p>").text("Location: " + locationCity + ", " + locationState));
+		    	newDiv.append($("<p>").text("Type: " + type));
+		    	newDiv.append($("<p>").text("Rating: " + rating));
+		    	newDiv.append($("<p>").text("Description: " + description));
+		    	$("#pointDetails").html(newDiv);
 		    	$("#myModal").modal("show");
 		    	hoverwindow.close(map, newPoint);
 		  	});
