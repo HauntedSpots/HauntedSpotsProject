@@ -3,3 +3,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#map {
+        height: 600px;
+        width: 100%;
+}
