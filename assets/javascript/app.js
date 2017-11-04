@@ -22,11 +22,10 @@ function initMap() {
     });
 
    	$(".fader").on("mouseenter", function() {
-   		$(this).fadeTo("fast", 1);
+   		$(this).fadeTo("slower", 1);
+   		$(this).css("opacity") = 1;
    	});
-   	$(".fader").on("mouseleave", function() {
-   		$(this).fadeTo("slow", 0);
-   	});
+   	
    	db.ref("/stories").on("child_added", function(snapshot) { 
 
 		var date = snapshot.val().date;
