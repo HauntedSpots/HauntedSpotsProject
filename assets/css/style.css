@@ -3,6 +3,10 @@
 	src: url('Frank/Frank-Knows.ttf');
 }
 
+.jumbotron {
+	text-align: center;
+	
+}
 body {
     background: url(../images/background.gif);
     background-repeat: no-repeat;
