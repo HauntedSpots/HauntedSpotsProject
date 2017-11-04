@@ -11,17 +11,7 @@ var config = {
 firebase.initializeApp(config);
 
 var db = firebase.database();
-
-
-db.ref().on("child_added", function(snapshot) {
-	var stories = snapshot.val();
-	console.log(snapshot.val());
-	console.log(snapshot.val()[0].location.geo);
-	var latitude = Number(snapshot.val()[0].location.geo.latitude);
-	var longitude = Number(snapshot.val()[0].location.geo.longitude);
-	console.log(latitude, longitude);
-
-});
+var totalChildren = 0;
 
 var googleMapsApiKey = "AIzaSyDY7MH2dv1jH8-T__4VIShSb79MOxirXLM";
 
@@ -32,25 +22,53 @@ function initMap() {
       center: {lat: 40.7607793, lng: -111.8910474}
     });
 
-	var newPoint = new google.maps.Marker({
-	    position: {lat: 40.6029647, lng: -111.8554152},
-	    map: map,
-	    label: "1"
-	    //icon: 
+   	//
+   	db.ref("/stories").on("child_added", function(snapshot) { 
+		totalChildren++;
+
+			var date = snapshot.val().date;
+			var description = snapshot.val().description;
+			var locationCity = snapshot.val().location.city;
+			var locationGeoLatitude = snapshot.val().location.geo.latitude;
+			var locationGeoLongitude = snapshot.val().location.geo.longitude;
+			var locationState = snapshot.val().location.state;
+			var name = snapshot.val().name;
+			var rating = String(snapshot.val().rating);
+			var truthFactor	= snapshot.val().truthFactor;
+			var type = snapshot.val().type;
+
+			console.log(date);
+			console.log(description);
+			console.log(locationCity, locationState);
+			console.log(locationGeoLatitude, locationGeoLongitude);
+			console.log(name);
+			console.log(rating);
+			console.log(truthFactor);
+			console.log(type);	
+
+			var newPoint = new google.maps.Marker({
+			    position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
+			    map: map,
+			    label: rating
+			    //icon: 
+			});
+
+			var hoverwindow = new google.maps.InfoWindow({
+			  	content: "<div>" + name + "</div>"
+			})
+
+		    newPoint.addListener('click', function() {
+		    	$("#storyDescription").text(description);
+		    	$("#myModal").modal("show");
+		    	hoverwindow.close(map, newPoint);
+		  	});
+		    newPoint.addListener('mouseover', function() {
+			    hoverwindow.open(map, newPoint);
+		  	});
+		  	newPoint.addListener('mouseout', function() {
+		  		hoverwindow.close(map, newPoint);
+		  	});
 	});
 
-	var hoverwindow = new google.maps.InfoWindow({
-	  	content: "<div>newPoint data</div>"
-	})
-
-    newPoint.addListener('click', function() {
-    	$("#myModal").modal("show");
-    	hoverwindow.close(map, newPoint);
-  	});
-    newPoint.addListener('mouseover', function() {
-	    hoverwindow.open(map, newPoint);
-  	});
-  	newPoint.addListener('mouseout', function() {
-  		hoverwindow.close(map, newPoint);
-  	});
+   	//
 };
