@@ -48,7 +48,7 @@ function initMap() {
 
 		var hoverwindow = new google.maps.InfoWindow({
 		  	content: "<div>" + name + "</div>"
-		})
+		});
 
 	    newPoint.addListener('click', function() {
 	    	$("#pointTitle").text(name);
@@ -69,4 +69,4 @@ function initMap() {
 	  		hoverwindow.close(map, newPoint);
 	  	});
 	});
-};
+}
