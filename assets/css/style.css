@@ -1,20 +1,32 @@
+/*Imported the font-family*/
 @font-face {
 	font-family: frank;
 	src: url('Frank/Frank-Knows.ttf');
 }
-
+/*================== Header styles ==================*/
 .jumbotron {
 	text-align: center;
-	opacity: 0;
-}
-.panel {
-	opacity: 0;
+	opacity: .5;
 }
 
+ul.menu {
+    display: block;
+}
+
+ul.menu li {
+    display: inline-block;
+    padding: 10px 25px;
+    padding-bottom: 0px;
+}
+/*================== Main Content Area ==================*/
 body {
     background: url(../images/background.gif);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.panel {
+	opacity: 0;
 }
 
 h1 {
