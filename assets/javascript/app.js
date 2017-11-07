@@ -85,7 +85,7 @@ function initMap() {
    				if (searchValue === dbCity) {
    					console.log(dbCity);
    					console.log("true");
-   					
+
    				} else {
    					console.log(dbCity);
    					console.log("false");
@@ -93,7 +93,6 @@ function initMap() {
    				}
    			});
    		}
-
 
    	});
 
