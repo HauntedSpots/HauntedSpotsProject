@@ -18,30 +18,8 @@ var weatherApiKey = "132260a72c04254ec694dcde2b5d9b91"
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
       "&units=imperial&appid=" + weatherApiKey;
 
-var lat = 39.3210;
-var lon = -111.0937;
-
 	// Here we run our AJAX call to the OpenWeatherMap API
-    $.ajax({
-        url: queryURL + "&lat=" + lat + "&lon=" + lon,
-        method: "GET"
-      })
-      // We store all of the retrieved data inside of an object called "response"
-      .done(function(response) {
-
-       // Log the queryURL
-        console.log(queryURL);
-
-       // Log the resulting object
-        console.log(response);
-
-       // Transfer content to HTML
-        $(".modal-header").append("<div class='weather'>" + response.main + "</div>");
-
-       // Log the data in the console as well
-        console.log(response.main);
-        
-      });
+    
 
 function initMap() {
 
@@ -60,6 +38,8 @@ function initMap() {
    	db.ref("/stories").on("child_added", function(snapshot) { 
    		children++;
 
+		
+
 		var date = snapshot.val().date;
 		var description = snapshot.val().description;
 		var locationCity = snapshot.val().location.city;
@@ -69,6 +49,22 @@ function initMap() {
 		var name = snapshot.val().name;
 		var rating = snapshot.val().rating;
 		var type = snapshot.val().type;
+		var temp;
+		var weather;
+
+		$.ajax({
+	        url: queryURL + "&lat=" + locationGeoLatitude + "&lon=" + locationGeoLongitude,
+	        method: "GET"
+	      	})
+	      	// We store all of the retrieved data inside of an object called "response"
+	      	.done(function(response) {
+
+	       	// Log the data in the console as well
+	        temp = Math.floor(response.main.temp);
+	        weather = response.weather[0].description;
+		        
+      	});
+
 
 		var newPoint = new google.maps.Marker({
 		    position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
@@ -90,6 +86,10 @@ function initMap() {
 	    	newDiv.append($("<p>").text("Type: " + type));
 	    	newDiv.append($("<p>").text("Rating: " + rating));
 	    	newDiv.append($("<p>").text("Description: " + description));
+	    	newDiv.append($("<hr>"));
+	    	newDiv.append($("<p>").text("Current Temperature: " + temp + "° F"));
+	    	newDiv.append($("<p>").text("Current Weather: " + weather));
+	    	newDiv.append($("<br>"));
 	    	$("#pointDetails").html(newDiv);
 	    	$("#myModal").modal("show");
 	    	hoverwindow.close(map, newPoint);
