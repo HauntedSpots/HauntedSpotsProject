@@ -67,7 +67,7 @@ function initMap() {
 		var locationGeoLongitude = snapshot.val().location.geo.longitude;
 		var locationState = snapshot.val().location.state;
 		var name = snapshot.val().name;
-		var rating = String(snapshot.val().rating);
+		var rating = snapshot.val().rating;
 		var type = snapshot.val().type;
 
 		var newPoint = new google.maps.Marker({
