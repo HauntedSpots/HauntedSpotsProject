@@ -13,6 +13,35 @@ firebase.initializeApp(config);
 var db = firebase.database();
 
 var googleMapsApiKey = "AIzaSyDY7MH2dv1jH8-T__4VIShSb79MOxirXLM";
+var weatherApiKey = "132260a72c04254ec694dcde2b5d9b91"
+
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+      "&units=imperial&appid=" + weatherApiKey;
+
+var lat = 39.3210;
+var lon = -111.0937;
+
+	// Here we run our AJAX call to the OpenWeatherMap API
+    $.ajax({
+        url: queryURL + "&lat=" + lat + "&lon=" + lon,
+        method: "GET"
+      })
+      // We store all of the retrieved data inside of an object called "response"
+      .done(function(response) {
+
+       // Log the queryURL
+        console.log(queryURL);
+
+       // Log the resulting object
+        console.log(response);
+
+       // Transfer content to HTML
+        $(".modal-header").append("<div class='weather'>" + response.main + "</div>");
+
+       // Log the data in the console as well
+        console.log(response.main);
+        
+      });
 
 function initMap() {
 
