@@ -46,14 +46,18 @@
                     <input class="form-control" id="date-input" type="date">
                 </div>
                 <div class="form-group">
-                    <label for="where-input">Longitude</label>
+                    <label for="where-input" id="city">City</label>
                     <input class="form-control" id="longitude" type="number" required="true">
-                    <label for="where-input">Latitude</label>
+                    <label for="where-input" id="state">State</label>
+                    <input class="form-control" id="longitude" type="number" required="true">
+                    <label for="where-input" placeholder="ex 111.1111">Longitude</label>
+                    <input class="form-control" id="longitude" type="number" required="true">
+                    <label for="where-input" placeholder="ex 111.1111">Latitude</label>
                     <input class="form-control" id="latitude" type="number" required="true">
                 </div>
                 <div class="form-group">
                     <label for="where-input">Type</label>
-                    <select class="form-control">
+                    <select class="form-control" id="type">
                       <option>--select--</option>
                       <option>Ghost</option>
                       <option>Sasquatch</option>
@@ -64,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <label for="where-input">Rating <em>(1 being not scary and 5 is very scary)</em></label>
-                    <select class="form-control" >
+                    <select class="form-control" id="rating">
                         <option>--select--</option>
                         <option> 1 </option>
                         <option> 2 </option>
