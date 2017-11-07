@@ -23,7 +23,7 @@ function initMap() {
 
    	$(".fader").on("mouseenter", function() {
    		$(this).fadeTo("slower", 1);
-   		$(this).css("opacity") = 1;
+   		$(this).css("opacity", 1);
    	});
    	
    	db.ref("/stories").on("child_added", function(snapshot) { 
@@ -69,4 +69,12 @@ function initMap() {
 	  		hoverwindow.close(map, newPoint);
 	  	});
 	});
+
+   	$("#goSubmit").on("click", function() {
+   		console.log("clicked");
+
+
+
+   	});
+
 }
