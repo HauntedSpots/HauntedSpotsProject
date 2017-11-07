@@ -21,7 +21,7 @@ ul.menu li {
     display: inline-block;
     padding: 10px 25px;
     padding-bottom: 10px;
-    background: #337ab7;
+    background: #000;
 }
 /*================== Main Content Area ==================*/
 body {
@@ -72,7 +72,7 @@ button#add-siting-btn:hover {
     background: #FF7A00!important;
 }
 
-/*================== Modal Style =========================*/
+/*================== Modal Styles =========================*/
 h4#pointTitle {
     font-family: frank;
     font-size: 30px;
