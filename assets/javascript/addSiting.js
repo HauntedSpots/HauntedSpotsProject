@@ -41,7 +41,7 @@ storiesDB.on("child_added", function(snapshot) {
     var longitude = data.location.geo.longitude;
     var state = data.location.state;
     var name = data.name;
-    var rating = String(data.rating);
+    var rating = data.rating;
     var truthFactor	= data.truthFactor;
     var type = data.type;
 
@@ -100,8 +100,8 @@ function createStory2() {
             state: "UT",
             city: "Kaysville",
             geo: {
-                longitude: -111.9385521,
-                latitude: 41.0352216
+                latitude: 41.0352216,
+                longitude: -111.9385521
             }
         },
         description: "Testing the Kaysville Ghost and the Kaysville residents",
@@ -132,7 +132,7 @@ $("#add-siting-btn").on("click", function () {
     var storyState = $("#state").val().trim();
     var storyCity = $("#city").val().trim();
     var storyType = $("#type").val().trim();
-    var storyRating = Number($("#rating").val().trim());
+    var storyRating = $("#rating").val().trim();
 
     var story = {
         name: storyName,
