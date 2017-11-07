@@ -134,6 +134,11 @@ $("#add-siting-btn").on("click", function () {
     var storyType = $("#type").val().trim();
     var storyRating = $("#rating").val().trim();
 
+    if (storyName.length === 0 || storyDate.length === 0 || storyRating.length === 0 ||
+    storyLatitude.length === 0 || storyLongitude.length === 0 || storyType.length === 0) {
+        return;
+    }
+
     var story = {
         name: storyName,
         location: {
