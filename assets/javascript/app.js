@@ -26,7 +26,10 @@ function initMap() {
    		$(this).css("opacity", 1);
    	});
    	
+   	var children = 0;
+
    	db.ref("/stories").on("child_added", function(snapshot) { 
+   		children++;
 
 		var date = snapshot.val().date;
 		var description = snapshot.val().description;
@@ -36,13 +39,13 @@ function initMap() {
 		var locationState = snapshot.val().location.state;
 		var name = snapshot.val().name;
 		var rating = String(snapshot.val().rating);
-		var truthFactor	= snapshot.val().truthFactor;
 		var type = snapshot.val().type;
 
 		var newPoint = new google.maps.Marker({
 		    position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
 		    map: map,
-		    label: rating
+		    label: rating, 
+		    id: locationCity
 		    //icon: 
 		});
 
@@ -71,8 +74,25 @@ function initMap() {
 	});
 
    	$("#goSubmit").on("click", function() {
-   		console.log("clicked");
+   		var searchValue = $("#searchInput").val().trim();
 
+   		for (var i = 0; i < children; i++) {
+
+   			db.ref().on("child_added", function(snapshot) {
+
+   				var dbCity = snapshot.val()[i].location.city;
+
+   				if (searchValue === dbCity) {
+   					console.log(dbCity);
+   					console.log("true");
+   					
+   				} else {
+   					console.log(dbCity);
+   					console.log("false");
+
+   				}
+   			});
+   		}
 
 
    	});
