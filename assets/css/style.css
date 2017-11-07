@@ -34,6 +34,14 @@ body {
 	opacity: 0;
 }
 
+.panel-primary {
+    border-color: #000!important;
+}
+
+.panel-heading {
+    background: #000!important;
+}
+
 h1 {
 	font-family: frank;
 }
@@ -46,4 +54,27 @@ h1 {
 
 p.back-btn {
     margin: 0px;
+}
+
+button#add-siting-btn {
+    background: #000;
+}
+
+.btn.btn-primary {
+    background: #000!important;
+}
+
+.btn.btn-primary:hover {
+    background:#FF7A00!important;
+}
+
+button#add-siting-btn:hover {
+    background: #FF7A00!important;
+}
+
+/*================== Modal Style =========================*/
+h4#pointTitle {
+    font-family: frank;
+    font-size: 30px;
+    text-align: center;
 }
