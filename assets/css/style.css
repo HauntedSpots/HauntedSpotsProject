@@ -6,7 +6,7 @@
 /*================== Header styles ==================*/
 .jumbotron {
 	text-align: center;
-	opacity: .5;
+	opacity: 0;
 }
 
 ul.menu {
