@@ -38,3 +38,7 @@ h1 {
         width: 100%;
         opacity: 0;
 }
+
+p.back-btn {
+    margin: 0px;
+}
