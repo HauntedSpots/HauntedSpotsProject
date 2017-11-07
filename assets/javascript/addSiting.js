@@ -12,25 +12,7 @@ var database = firebase.database();
 var storiesDB = database.ref("/stories");
 var stories = [];
 
-// storiesDB.on("value", function (snapshot) {
-//     var data = snapshot.val();
-//     if (data === null) {
-//         // stories = [];
-//         return;  // no data, just return
-//     }
-//     console.log("In Value from storiesDB on value.... " + data);
-//
-//
-// }, function (errorObject) {
-//     console.log("The read failed: " + errorObject.code);
-// });
-
-var loadedFromFirebaseAlready = false;
 storiesDB.on("child_added", function(snapshot) {
-    if (loadedFromFirebaseAlready) {
-        console.log("Already loaded, no need to load again: " + snapshot.val());
-        return;
-    }
     var data = snapshot.val();
     console.log("Data from child_added: ");
     console.log(data);
@@ -63,12 +45,51 @@ storiesDB.on("child_added", function(snapshot) {
     };
 
     stories.push(story);
-
-
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
 
+$("#add-siting-btn").on("click", function () {
+    event.preventDefault();
+    loadedFromFirebaseAlready = true;
+    var storyName = $("#name-input").val().trim();
+    var storyDate = $("#date-input").val().trim();
+    var storyDesc = $("#desc-input").val().trim();
+    var storyLongitude = $("#longitude").val().trim();
+    var storyLatitude = $("#latitude").val().trim();
+    var storyState = $("#state").val().trim();
+    var storyCity = $("#city").val().trim();
+    var storyType = $("#type").val().trim();
+    var storyRating = $("#rating").val().trim();
+
+    if (storyName.length === 0 || storyDate.length === 0 || storyRating.length === 0 ||
+        storyLatitude.length === 0 || storyLongitude.length === 0 || storyType.length === 0) {
+        return;  // not enough values input to make the object
+    } else {
+        var story = {
+            name: storyName,
+            location: {
+                state: storyState,
+                city: storyCity,
+                geo: {
+                    longitude: Number(storyLongitude),
+                    latitude: Number(storyLatitude)
+                }
+            },
+            description: storyDesc,
+            type: storyType,
+            rating: storyRating,
+            truthFactor: 1,
+            date: storyDate
+        };
+
+        stories.push(story);
+
+        storiesDB.set(stories);
+        // console.log(story);
+        $("#newSitingForm").trigger("reset");
+    }
+});
 
 function createStory1() {
     var story = {
@@ -114,53 +135,10 @@ function createStory2() {
     stories.push(story);
 }
 
-
 function loadup(){
     createStory1();
     createStory2();
     storiesDB.set(stories);
 }
-
-$("#add-siting-btn").on("click", function () {
-    event.preventDefault();
-    loadedFromFirebaseAlready = true;
-    var storyName = $("#name-input").val().trim();
-    var storyDate = $("#date-input").val().trim();
-    var storyDesc = $("#desc-input").val().trim();
-    var storyLongitude = Number($("#longitude").val().trim());
-    var storyLatitude = Number($("#latitude").val().trim());
-    var storyState = $("#state").val().trim();
-    var storyCity = $("#city").val().trim();
-    var storyType = $("#type").val().trim();
-    var storyRating = $("#rating").val().trim();
-
-    if (storyName.length === 0 || storyDate.length === 0 || storyRating.length === 0 ||
-    storyLatitude.length === 0 || storyLongitude.length === 0 || storyType.length === 0) {
-        return;
-    }
-
-    var story = {
-        name: storyName,
-        location: {
-            state: storyState,
-            city: storyCity,
-            geo: {
-                longitude: storyLongitude,
-                latitude: storyLatitude
-            }
-        },
-        description: storyDesc,
-        type: storyType,
-        rating: storyRating,
-        truthFactor: 1,
-        date: storyDate
-    };
-
-    stories.push(story);
-
-    storiesDB.set(stories);
-    // console.log(story);
-    $("#newSitingForm").trigger("reset");
-});
 
 // loadup();
