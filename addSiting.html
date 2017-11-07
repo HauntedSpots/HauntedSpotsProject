@@ -8,7 +8,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-lightbox.css">
@@ -29,7 +28,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="panel panel-primary">
+    <div class="panel panel-primary fader">
         <div class="panel-heading">
             <h3 class="panel-title"><strong>Add a Siting</strong></h3>
         </div>
@@ -46,12 +45,18 @@
                     <input class="form-control" id="date-input" type="date">
                 </div>
                 <div class="form-group">
-                    <label for="where-input">Location</label>
-                    <input class="form-control" id="where-input" type="text" required="true">
+                    <label for="where-input">City</label>
+                    <input class="form-control" id="city" type="text" required="true">
+                    <label for="where-input">State</label>
+                    <input class="form-control" id="state" type="text" required="true">
+                    <label for="where-input">Longitude</label>
+                    <input class="form-control" id="longitude" type="number" required="true" placeholder="ex 111.1111" step="any">
+                    <label for="where-input">Latitude</label>
+                    <input class="form-control" id="latitude" type="number" required="true" placeholder="ex 111.1111" step="any">
                 </div>
                 <div class="form-group">
                     <label for="where-input">Type</label>
-                    <select class="form-control">
+                    <select class="form-control" id="type">
                       <option>--select--</option>
                       <option>Ghost</option>
                       <option>Sasquatch</option>
@@ -62,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="where-input">Rating <em>(1 being not scary and 5 is very scary)</em></label>
-                    <select class="form-control" >
+                    <select class="form-control" id="rating">
                         <option>--select--</option>
                         <option> 1 </option>
                         <option> 2 </option>
@@ -81,7 +86,12 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+    $(".fader").on("mouseenter", function() {
+    $(this).fadeTo("slower", 1);
+    $(this).css("opacity", 1);
+    });
+</script>
 <script src="assets/javascript/addSiting.js"></script>
 </body>
 </html>
