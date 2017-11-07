@@ -155,6 +155,7 @@ $("#add-siting-btn").on("click", function () {
 
     storiesDB.set(stories);
     // console.log(story);
+    $("#newSitingForm").trigger("reset");
 });
 
 // loadup();
