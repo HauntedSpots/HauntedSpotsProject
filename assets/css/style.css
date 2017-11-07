@@ -17,6 +17,12 @@ li.menu-item a {
     color: #fff;
 }
 
+li.menu-item:hover {
+    background: #FF7A00;
+    text-decoration: none;
+}
+
+
 ul.menu li {
     display: inline-block;
     padding: 10px 25px;
