@@ -13,10 +13,15 @@ ul.menu {
     display: block;
 }
 
+li.menu-item a {
+    color: #fff;
+}
+
 ul.menu li {
     display: inline-block;
     padding: 10px 25px;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
+    background: #337ab7;
 }
 /*================== Main Content Area ==================*/
 body {
