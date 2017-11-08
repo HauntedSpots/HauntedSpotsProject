@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Haunted Spots</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-lightbox.css">
+    <script type="text/javascript" src="assets/javascript/bootstrap-lightbox.js"></script>
+    <link rel="icon" href="demo_icon.gif" type="/assets/images/favicon.png" sizes="64x64">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron fader">
+            <div class="row">
+                <h1>Haunted Spots</h1>
+                <ul class="menu">
+                    <li class="menu-item"><a href="addSiting.html">Add Story</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Trigger the modal with a button -->
+        <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Location</button> -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="pointTitle"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12" id="pointDetails">
+                                <!-- <img class="thumbnail" src="assets/images/AF-Canyon-Fork.png"> -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- <div class="panel panel-default fader">
+            <div class="panel-body">
+                <div class="col-lg-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search for...">
+                        <span class="input-group-btn">
+                    <button class="btn btn-primary" id="goSubmit" type="button">Go!</button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="fader" id="map"></div>
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY7MH2dv1jH8-T__4VIShSb79MOxirXLM&callback=initMap">
+    </script>
+</body>
+
+</html>

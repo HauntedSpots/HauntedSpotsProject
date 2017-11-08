@@ -1,0 +1,86 @@
+/*Imported the font-family*/
+@font-face {
+	font-family: frank;
+	src: url('Frank/Frank-Knows.ttf');
+}
+/*================== Header styles ==================*/
+.jumbotron {
+	text-align: center;
+	opacity: 0;
+}
+
+ul.menu {
+    display: block;
+}
+
+li.menu-item a {
+    color: #fff;
+}
+
+li.menu-item:hover {
+    background: #FF7A00;
+    text-decoration: none;
+}
+
+
+ul.menu li {
+    display: inline-block;
+    padding: 10px 25px;
+    padding-bottom: 10px;
+    background: #000;
+}
+/*================== Main Content Area ==================*/
+body {
+    background: url(../images/background.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.panel {
+	opacity: 0;
+}
+
+.panel-primary {
+    border-color: #000!important;
+}
+
+.panel-heading {
+    background: #000!important;
+}
+
+h1 {
+	font-family: frank;
+}
+
+#map {
+        height: 600px;
+        width: 100%;
+        opacity: 0;
+}
+
+p.back-btn {
+    margin: 0px;
+}
+
+button#add-siting-btn {
+    background: #000;
+}
+
+.btn.btn-primary {
+    background: #000!important;
+}
+
+.btn.btn-primary:hover {
+    background:#FF7A00!important;
+}
+
+button#add-siting-btn:hover {
+    background: #FF7A00!important;
+}
+
+/*================== Modal Styles =========================*/
+h4#pointTitle {
+    font-family: frank;
+    font-size: 30px;
+    text-align: center;
+}
