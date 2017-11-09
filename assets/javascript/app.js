@@ -24,8 +24,8 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center: {lat: 40.7607793, lng: -111.8910474}
+        zoom: 4,
+        center: {lat: 39.8097343, lng: -98.5556199}
     });
 
     $(".fader").on("mouseenter", function () {
@@ -67,7 +67,7 @@ function initMap() {
         var newPoint = null;
         if (type === 'Sasquatch') {
             var image = {
-                url: 'assets/images/sasicon.png',
+                url: 'assets/images/sas2.png',
                 // This marker is 20 pixels wide by 32 pixels high.
                 size: new google.maps.Size(40, 52),
                 // The origin for this image is (0, 0).
@@ -80,7 +80,6 @@ function initMap() {
             newPoint = new google.maps.Marker({
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
-                label: rating,
                 id: locationCity,
                 icon: image
             });
@@ -88,7 +87,7 @@ function initMap() {
             var image = {
                 url: 'assets/images/favicon.ico',
                 // This marker is 20 pixels wide by 32 pixels high.
-                size: new google.maps.Size(20, 32),
+                size: new google.maps.Size(40, 52),
                 // The origin for this image is (0, 0).
                 origin: new google.maps.Point(0, 0),
                 // The anchor for this image is the base of the flagpole at (0, 32).
@@ -99,7 +98,6 @@ function initMap() {
             newPoint = new google.maps.Marker({
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
-                label: rating,
                 id: locationCity,
                 icon: image
             });
@@ -107,7 +105,6 @@ function initMap() {
             newPoint = new google.maps.Marker({
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
-                label: rating,
                 id: locationCity
             });
         }
