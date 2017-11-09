@@ -7,6 +7,7 @@
 .jumbotron {
 	text-align: center;
 	opacity: 0;
+    background: none!important;
 }
 
 ul.menu {
@@ -18,7 +19,7 @@ li.menu-item a {
 }
 
 li.menu-item:hover {
-    background: #FF7A00;
+    background: #a32020;
     text-decoration: none;
 }
 
@@ -50,6 +51,8 @@ body {
 
 h1 {
 	font-family: frank;
+    font-size: 10em!important;
+    color: #a32020!important;
 }
 
 #map {
@@ -71,11 +74,11 @@ button#add-siting-btn {
 }
 
 .btn.btn-primary:hover {
-    background:#FF7A00!important;
+    background:#a32020!important;
 }
 
 button#add-siting-btn:hover {
-    background: #FF7A00!important;
+    background: #a32020!important;
 }
 
 label.geoHelp {
