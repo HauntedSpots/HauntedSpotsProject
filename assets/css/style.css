@@ -84,3 +84,10 @@ h4#pointTitle {
     font-size: 30px;
     text-align: center;
 }
+
+.modal-content {
+    background: url(https://ak7.picdn.net/shutterstock/videos/17134207/thumb/1.jpg);
+    background-repeat: no-repeat;
+    color: white;
+    background-size: cover;
+}
