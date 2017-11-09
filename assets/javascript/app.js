@@ -73,7 +73,7 @@ function initMap() {
                 // The origin for this image is (0, 0).
                 origin: new google.maps.Point(0, 0),
                 // The anchor for this image is the base of the flagpole at (0, 32).
-                anchor: new google.maps.Point(0, 0)
+                anchor: new google.maps.Point(0, 32)
             };
 
 
@@ -92,7 +92,7 @@ function initMap() {
                 // The origin for this image is (0, 0).
                 origin: new google.maps.Point(0, 0),
                 // The anchor for this image is the base of the flagpole at (0, 32).
-                anchor: new google.maps.Point(0, 0)
+                anchor: new google.maps.Point(0, 32)
             };
 
 
@@ -111,7 +111,7 @@ function initMap() {
                 // The origin for this image is (0, 0).
                 origin: new google.maps.Point(0, 0),
                 // The anchor for this image is the base of the flagpole at (0, 32).
-                anchor: new google.maps.Point(0, 0)
+                anchor: new google.maps.Point(0, 32)
             };
 
 
@@ -126,11 +126,11 @@ function initMap() {
             var image = {
                 url: 'assets/images/question-mark.png',
                 // This marker is 20 pixels wide by 32 pixels high.
-                size: new google.maps.Size(40, 52),
+                size: new google.maps.Size(50, 62),
                 // The origin for this image is (0, 0).
                 origin: new google.maps.Point(0, 0),
                 // The anchor for this image is the base of the flagpole at (0, 32).
-                anchor: new google.maps.Point(0, 0)
+                anchor: new google.maps.Point(0, 32)
             };
 
 
