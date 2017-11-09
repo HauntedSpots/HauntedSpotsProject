@@ -10,6 +10,10 @@
     background: none!important;
 }
 
+.jumbotron.fader {
+    margin-bottom: 0;
+}
+
 ul.menu {
     display: block;
 }
@@ -50,9 +54,10 @@ body {
 }
 
 h1 {
-	font-family: frank;
+    font-family: frank;
     font-size: 10em!important;
     color: #a32020!important;
+    margin-bottom: 45px;
 }
 
 #map {
