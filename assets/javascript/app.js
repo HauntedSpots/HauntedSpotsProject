@@ -81,11 +81,12 @@ function initMap() {
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
                 id: locationCity,
+                animation: google.maps.Animation.DROP,
                 icon: image
             });
         } else if (type === 'Ghost') {
             var image = {
-                url: 'assets/images/favicon.ico',
+                url: 'assets/images/ghost.png',
                 // This marker is 20 pixels wide by 32 pixels high.
                 size: new google.maps.Size(40, 52),
                 // The origin for this image is (0, 0).
@@ -99,6 +100,7 @@ function initMap() {
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
                 id: locationCity,
+                animation: google.maps.Animation.DROP,
                 icon: image
             });
         } else if (type === 'Cemetary') {
@@ -117,12 +119,14 @@ function initMap() {
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
                 id: locationCity,
+                animation: google.maps.Animation.DROP,
                 icon: image
             });
         } else {
             newPoint = new google.maps.Marker({
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
+                animation: google.maps.Animation.DROP,
                 id: locationCity
             });
         }
