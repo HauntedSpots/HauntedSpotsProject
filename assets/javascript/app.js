@@ -80,7 +80,6 @@ function initMap() {
             newPoint = new google.maps.Marker({
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
-                label: rating,
                 id: locationCity,
                 icon: image
             });
@@ -99,7 +98,6 @@ function initMap() {
             newPoint = new google.maps.Marker({
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
-                label: rating,
                 id: locationCity,
                 icon: image
             });
@@ -107,7 +105,6 @@ function initMap() {
             newPoint = new google.maps.Marker({
                 position: {lat: locationGeoLatitude, lng: locationGeoLongitude},
                 map: map,
-                label: rating,
                 id: locationCity
             });
         }
