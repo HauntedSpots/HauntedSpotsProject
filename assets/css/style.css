@@ -16,9 +16,12 @@ ul.menu {
 
 li.menu-item a {
     color: #fff;
+    padding: 10px 25px;
+    background: #000;
+    border-radius: 5px;
 }
 
-li.menu-item:hover {
+li.menu-item a:hover {
     background: #a32020;
     text-decoration: none;
 }
@@ -26,9 +29,6 @@ li.menu-item:hover {
 
 ul.menu li {
     display: inline-block;
-    padding: 10px 25px;
-    padding-bottom: 10px;
-    background: #000;
 }
 /*================== Main Content Area ==================*/
 body {
