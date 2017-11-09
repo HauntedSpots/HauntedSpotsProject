@@ -24,8 +24,8 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center: {lat: 40.7607793, lng: -111.8910474}
+        zoom: 4,
+        center: {lat: 39.8097343, lng: -98.5556199}
     });
 
     $(".fader").on("mouseenter", function () {
