@@ -78,6 +78,17 @@ button#add-siting-btn:hover {
     background: #FF7A00!important;
 }
 
+label.geoHelp {
+    text-align: center;
+    width: 100%;
+    background: #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+label.geoHelp a {
+    color: #fff;
+}
 /*================== Modal Styles =========================*/
 h4#pointTitle {
     font-family: frank;
