@@ -67,7 +67,7 @@ function initMap() {
         var newPoint = null;
         if (type === 'Sasquatch') {
             var image = {
-                url: 'assets/images/sasicon.png',
+                url: 'assets/images/sas2.png',
                 // This marker is 20 pixels wide by 32 pixels high.
                 size: new google.maps.Size(40, 52),
                 // The origin for this image is (0, 0).
@@ -88,7 +88,7 @@ function initMap() {
             var image = {
                 url: 'assets/images/favicon.ico',
                 // This marker is 20 pixels wide by 32 pixels high.
-                size: new google.maps.Size(20, 32),
+                size: new google.maps.Size(40, 52),
                 // The origin for this image is (0, 0).
                 origin: new google.maps.Point(0, 0),
                 // The anchor for this image is the base of the flagpole at (0, 32).
